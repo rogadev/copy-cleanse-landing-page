@@ -1,0 +1,352 @@
+---
+import { Icon } from 'astro-icon/components'
+import '../styles/global.css'
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>CopyCleanse - Clean copy, auto-magically</title>
+    <meta
+      name='description'
+      content='Paste messy text. CopyCleanse scrubs hidden whitespace, zero‑widths, smart quotes, em dashes, ellipses, soft hyphens, odd Unicode, and AI tracking params — then auto‑copies the cleaned version.'
+    />
+  </head>
+  <body>
+    <div
+      class='min-h-dvh bg-gradient-to-b from-slate-900 via-slate-950 to-black text-slate-100'
+    >
+      <!-- Header -->
+      <header
+        class='sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60 bg-slate-900/80 border-b border-white/5'
+      >
+        <div
+          class='mx-auto max-w-6xl px-4 py-3 flex items-center justify-between'
+        >
+          <a href='#' class='flex items-center gap-2 group'>
+            <span
+              class='inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-500 ring-1 ring-white/15 group-hover:scale-105 transition'
+            >
+              <Icon name='wand' class='h-5 w-5' aria-hidden='true' />
+            </span>
+            <span class='text-lg font-semibold tracking-tight'>CopyCleanse</span
+            >
+          </a>
+          <div class='hidden sm:block'>
+            <a
+              href='#try'
+              class='inline-flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/15 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400'
+            >
+              <Icon name='sparkles' class='h-4 w-4' /> Paste & Clean
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero -->
+      <section class='relative'>
+        <div class='mx-auto max-w-6xl px-4 py-10 sm:py-16'>
+          <div class='grid gap-8 lg:grid-cols-2 lg:items-center'>
+            <div>
+              <div
+                class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300'
+              >
+                <Icon name='shield-check' class='h-3.5 w-3.5' /> Zero-noise, human-friendly
+                text
+              </div>
+              <h1
+                class='mt-4 text-4xl font-semibold tracking-tight sm:text-5xl'
+              >
+                Clean copy, <span
+                  class='bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent'
+                  >auto-magically</span
+                >
+              </h1>
+              <p class='mt-4 text-slate-300 max-w-prose'>
+                Paste messy text. CopyCleanse scrubs hidden whitespace,
+                zero‑widths, smart quotes, em dashes, ellipses, soft hyphens,
+                odd Unicode, and AI tracking params — then auto‑copies the
+                cleaned version.
+              </p>
+              <div class='mt-6 flex items-center gap-3'>
+                <a
+                  href='https://clean.copycleanse.com'
+                  class='inline-flex items-center gap-2 rounded-xl bg-indigo-500 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-slate-900'
+                >
+                  <Icon name='clipboard-list' class='h-4 w-4' /> Try now
+                </a>
+                <a
+                  href='#how'
+                  class='inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-slate-200 ring-1 ring-white/10 hover:bg-white/10'
+                >
+                  <Icon name='info' class='h-4 w-4' /> Learn more
+                </a>
+              </div>
+              <p class='mt-3 text-xs text-slate-400'>
+                No data stored. Everything happens in your browser.
+              </p>
+            </div>
+
+            <!-- Mocked device/card preview -->
+            <div class='relative'>
+              <div
+                class='rounded-2xl border border-white/10 bg-white/5 p-4 shadow-2xl ring-1 ring-black/5'
+              >
+                <div
+                  class='rounded-xl bg-slate-900/60 p-4 ring-1 ring-white/10'
+                >
+                  <div class='mb-3 flex items-center justify-between'>
+                    <div class='text-sm text-slate-300'>Preview</div>
+                    <div
+                      class='inline-flex items-center gap-2 text-xs text-emerald-300'
+                    >
+                      <Icon name='check-circle' class='h-4 w-4' /> Cleaned & copied
+                    </div>
+                  </div>
+                  <div class='rounded-lg bg-slate-950 p-3 ring-1 ring-white/10'>
+                    <div
+                      class='h-40 overflow-hidden rounded-md bg-gradient-to-br from-slate-800 to-slate-900 p-3 text-slate-200 text-sm leading-relaxed'
+                    >
+                      "Straight quotes" replaced, — em dashes normalized, …
+                      ellipses fixed, zero‑widths removed, and <span
+                        class='underline decoration-dotted'>utm_source</span
+                      > purged.
+                    </div>
+                  </div>
+                  <div class='mt-3 flex items-center justify-between'>
+                    <div class='text-xs text-slate-400'>
+                      Example output (static demo)
+                    </div>
+                    <div
+                      class='inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 px-2 py-1 text-emerald-300 ring-1 ring-emerald-400/30'
+                    >
+                      <Icon name='clipboard-check' class='h-4 w-4' /> Copied
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class='pointer-events-none absolute -inset-x-8 -bottom-8 -top-8 -z-10 blur-3xl opacity-30 bg-gradient-to-tr from-indigo-500 via-fuchsia-500 to-violet-500'
+              >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Steps -->
+      <section id='steps' class='border-t border-white/5'>
+        <div class='mx-auto max-w-6xl px-4 py-10 sm:py-14'>
+          <div class='grid gap-6 md:grid-cols-3'>
+            <div
+              class='rounded-2xl border border-white/10 bg-white/5 p-5 ring-1 ring-white/10'
+            >
+              <div
+                class='mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500/20 text-indigo-300 ring-1 ring-indigo-400/30'
+              >
+                <span class='text-sm font-semibold'>1</span>
+              </div>
+              <h3 class='text-lg font-semibold'>Paste</h3>
+              <p class='mt-1 text-sm text-slate-300'>
+                Click the field or press ⌘/Ctrl+V to drop text in.
+              </p>
+            </div>
+            <div
+              class='rounded-2xl border border-white/10 bg-white/5 p-5 ring-1 ring-white/10'
+            >
+              <div
+                class='mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500/20 text-indigo-300 ring-1 ring-indigo-400/30'
+              >
+                <span class='text-sm font-semibold'>2</span>
+              </div>
+              <h3 class='text-lg font-semibold'>Clean</h3>
+              <p class='mt-1 text-sm text-slate-300'>
+                We strip hidden whitespace, normalize quotes & dashes, remove
+                zero‑widths and soft hyphens.
+              </p>
+            </div>
+            <div
+              class='rounded-2xl border border-white/10 bg-white/5 p-5 ring-1 ring-white/10'
+            >
+              <div
+                class='mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500/20 text-indigo-300 ring-1 ring-indigo-400/30'
+              >
+                <span class='text-sm font-semibold'>3</span>
+              </div>
+              <h3 class='text-lg font-semibold'>Copy</h3>
+              <p class='mt-1 text-sm text-slate-300'>
+                Clean result is auto‑copied. Hit ⌘/Ctrl+C if you want a manual
+                copy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id='how' class='border-t border-white/5 bg-slate-950/40'>
+        <div class='mx-auto max-w-6xl px-4 py-10 sm:py-14'>
+          <h2 class='text-2xl font-semibold'>How it works</h2>
+          <p class='mt-2 text-slate-300 text-sm max-w-prose'>
+            CopyCleanse simply looks for and replaces the problematic items
+            right here in your browser. The text stays on your computer or
+            device and is never sent to a server.
+          </p>
+        </div>
+      </section>
+
+      <!-- What it removes -->
+      <section id='what' class='border-t border-white/5'>
+        <div class='mx-auto max-w-6xl px-4 py-10 sm:py-14'>
+          <h2 class='text-2xl font-semibold'>What gets removed / normalized</h2>
+          <p class='mt-2 text-slate-300 text-sm max-w-prose'>
+            CopyCleanse targets noise that breaks formatting or signals
+            automated text.
+          </p>
+          <div class='mt-4 flex flex-wrap gap-2'>
+            <span
+              class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200'
+            >
+              <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> Zero‑width
+              characters
+            </span>
+            <span
+              class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200'
+            >
+              <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> Hidden
+              whitespace
+            </span>
+            <span
+              class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200'
+            >
+              <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> Smart
+              quotes → straight
+            </span>
+            <span
+              class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200'
+            >
+              <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> Em/En
+              dashes normalization
+            </span>
+            <span
+              class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200'
+            >
+              <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> Unicode
+              ellipses → ...
+            </span>
+            <span
+              class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200'
+            >
+              <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> Soft
+              hyphens
+            </span>
+            <span
+              class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200'
+            >
+              <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> Directional
+              marks
+            </span>
+            <span
+              class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200'
+            >
+              <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> Non‑breaking
+              spaces
+            </span>
+            <span
+              class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200'
+            >
+              <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> Suspicious
+              homoglyphs
+            </span>
+            <span
+              class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200'
+            >
+              <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> URL
+              UTM & AI params
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Try it (visual only) -->
+      <section id='try' class='border-t border-white/5'>
+        <div class='mx-auto max-w-4xl px-4 py-10 sm:py-14'>
+          <div class='rounded-2xl bg-white/5 p-5 ring-1 ring-white/10'>
+            <label
+              for='paste'
+              class='mb-2 block text-sm font-medium text-slate-200'
+            >
+              Paste your text
+            </label>
+            <div class='relative'>
+              <textarea
+                id='paste'
+                rows='8'
+                aria-describedby='paste-help'
+                class='w-full resize-y rounded-xl border border-white/10 bg-slate-950/70 p-4 text-sm text-slate-100 placeholder:text-slate-500 shadow-inner ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-400'
+                placeholder='Paste any text here…'
+                readonly
+                >Curly "quotes", — dashes, … ellipses, zero​widths, and
+                https://example.com/?utm_source=x&utm_medium=y&ai_model=z</textarea
+              >
+              <!-- Fake floating toolbar -->
+              <div
+                class='pointer-events-none absolute right-3 top-3 inline-flex items-center gap-2 rounded-lg bg-slate-800/80 px-2 py-1 text-xs text-slate-200 ring-1 ring-white/10'
+              >
+                <span class='hidden sm:inline'>Auto: Clean & Copy</span>
+                <Icon name='clipboard-check' class='h-4 w-4 text-emerald-300' />
+              </div>
+            </div>
+            <p id='paste-help' class='mt-2 text-xs text-slate-400'>
+              Demo only — this field is read‑only to show layout. In app:
+              pasting triggers clean & clipboard copy.
+            </p>
+
+            <!-- Static status row -->
+            <div class='mt-4 flex flex-wrap items-center gap-2 text-xs'>
+              <span
+                class='inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 px-2 py-1 text-emerald-300 ring-1 ring-emerald-400/30'
+              >
+                <Icon name='check-circle' class='h-4 w-4' /> Cleaned
+              </span>
+              <span
+                class='inline-flex items-center gap-2 rounded-lg bg-indigo-500/10 px-2 py-1 text-indigo-300 ring-1 ring-indigo-400/30'
+              >
+                <Icon name='clipboard-check' class='h-4 w-4' /> Copied to clipboard
+              </span>
+              <span class='text-slate-400'>•</span>
+              <span class='text-slate-300'
+                >0 hidden chars removed • 2 quotes • 1 dash • 2 params</span
+              >
+            </div>
+          </div>
+
+          <!-- Microcopy -->
+          <div class='mt-3 text-xs text-slate-400'>
+            Tip: Press <kbd
+              class='rounded border border-white/20 bg-white/5 px-1'>Esc</kbd
+            > to clear. Accessibility-first — labels, roles, and visible focus states
+            included.
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class='mt-4 border-t border-white/5'>
+        <div
+          class='mx-auto max-w-6xl px-4 py-8 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-3'
+        >
+          <p>© 2024 CopyCleanse. Clean text. Clear signals.</p>
+          <div class='flex items-center gap-4'>
+            <a href='#' class='hover:text-slate-200'>Privacy</a>
+            <a href='#' class='hover:text-slate-200'>Terms</a>
+            <a href='#' class='hover:text-slate-200'>Contact</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
