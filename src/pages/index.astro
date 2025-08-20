@@ -6,7 +6,7 @@ import '../styles/global.css'
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <title>CopyCleanse - Clean copy, auto-magically</title>
@@ -27,11 +27,11 @@ import '../styles/global.css'
           class='mx-auto max-w-6xl px-4 py-3 flex items-center justify-between'
         >
           <a href='#' class='flex items-center gap-2 group'>
-            <span
-              class='inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-500 ring-1 ring-white/15 group-hover:scale-105 transition'
-            >
-              <Icon name='wand' class='h-5 w-5' aria-hidden='true' />
-            </span>
+            <img
+              src='/logo.png'
+              alt='CopyCleanse Logo'
+              class='h-9 w-9 rounded-xl ring-1 ring-white/15 group-hover:scale-105 transition'
+            />
             <span class='text-lg font-semibold tracking-tight'>CopyCleanse</span
             >
           </a>
@@ -108,12 +108,30 @@ import '../styles/global.css'
                   </div>
                   <div class='rounded-lg bg-slate-950 p-3 ring-1 ring-white/10'>
                     <div
-                      class='h-40 overflow-hidden rounded-md bg-gradient-to-br from-slate-800 to-slate-900 p-3 text-slate-200 text-sm leading-relaxed'
+                      class='h-48 sm:h-40 overflow-hidden rounded-md bg-gradient-to-br from-slate-800 to-slate-900 p-3 text-slate-200 text-sm leading-relaxed flex flex-col justify-between'
                     >
-                      "Straight quotes" replaced, — em dashes normalized, …
-                      ellipses fixed, zero‑widths removed, and <span
-                        class='underline decoration-dotted'>utm_source</span
-                      > purged.
+                      <p>
+                        Here's some <span class='ai-smart-quote'>"</span
+                        >AI-generated<span class='ai-smart-quote'>"</span> text <span
+                          class='ai-em-dash'>—</span
+                        > it looks fine at first glance, but actually hides issues<span
+                          class='ai-ellipsis'>…</span
+                        >
+                      </p>
+                      <p>
+                        Zero-width characters like soft<span
+                          class='ai-soft-hyphen'>­</span
+                        >hyphens can be hard to spot.
+                      </p>
+                      <p>
+                        Smart quotes <span class='ai-smart-quote'>'</span>like
+                        these<span class='ai-smart-quote'>'</span> can be a giveaway.
+                      </p>
+                      <p>
+                        Even links can betray you: https://site.com/page?<span
+                          class='ai-tracking-param'>utm_source=chatgpt</span
+                        >
+                      </p>
                     </div>
                   </div>
                   <div class='mt-3 flex items-center justify-between'>
@@ -282,23 +300,44 @@ import '../styles/global.css'
               Paste your text
             </label>
             <div class='relative'>
-              <textarea
+              <p
                 id='paste'
                 rows='8'
                 aria-describedby='paste-help'
                 class='w-full resize-y rounded-xl border border-white/10 bg-slate-950/70 p-4 text-sm text-slate-100 placeholder:text-slate-500 shadow-inner ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-400'
                 placeholder='Paste any text here…'
                 readonly
-                >Curly "quotes", — dashes, … ellipses, zero​widths, and
-                https://example.com/?utm_source=x&utm_medium=y&ai_model=z</textarea
               >
-              <!-- Fake floating toolbar -->
-              <div
-                class='pointer-events-none absolute right-3 top-3 inline-flex items-center gap-2 rounded-lg bg-slate-800/80 px-2 py-1 text-xs text-slate-200 ring-1 ring-white/10'
+                Here's some <span class='ai-smart-quote'>"</span
+                >AI-generated<span class='ai-smart-quote'>"</span> text <span
+                  class='ai-em-dash'>—</span
+                > it looks fine at first glance, but actually hides issues<span
+                  class='ai-ellipsis'>…</span
+                ><br />There are zero-width characters in places you can't see,
+                soft<span class='ai-soft-hyphen'>­</span>hyphens slipped into
+                words, and em dashes<span class='ai-em-dash'>—</span>like this
+                one<span class='ai-em-dash'>—</span>that stand out unnaturally.<br
+                />Even smart quotes <span class='ai-smart-quote'>"</span>like
+                these<span class='ai-smart-quote'>"</span> or <span
+                  class='ai-smart-quote'>'</span
+                >those<span class='ai-smart-quote'>'</span> can be a giveaway.<br
+                />Some links? Sure: https://example.com/page?<span
+                  class='ai-tracking-param'>utm_source=chatgpt</span
+                ><br /><span class='ai-ellipsis'>…</span>they carry tell-tale
+                tracking parameters.<br />And of course, a few extra spaces or
+                invisible marks make the text look subtly
+                <span class='ai-smart-quote'>"</span>off.<span
+                  class='ai-smart-quote'>"</span
+                >
+              </p>
+              <!-- Clickable clean button -->
+              <a
+                href='https://clean.copycleanse.com'
+                class='absolute right-3 top-3 inline-flex items-center gap-2 rounded-lg bg-slate-800/80 px-2 py-1 text-xs text-slate-200 ring-1 ring-white/10 hover:bg-slate-700/80 transition-colors'
               >
-                <span class='hidden sm:inline'>Auto: Clean & Copy</span>
+                <span class='hidden sm:inline'>Clean text</span>
                 <Icon name='clipboard-check' class='h-4 w-4 text-emerald-300' />
-              </div>
+              </a>
             </div>
             <p id='paste-help' class='mt-2 text-xs text-slate-400'>
               Demo only — this field is read‑only to show layout. In app:
@@ -339,12 +378,21 @@ import '../styles/global.css'
         <div
           class='mx-auto max-w-6xl px-4 py-8 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-3'
         >
-          <p>© 2024 CopyCleanse. Clean text. Clear signals.</p>
+          <p>&copy; 2025 Ryan Roga.</p>
           <div class='flex items-center gap-4'>
+            <a
+              href='https://github.com/rogadev'
+              class='inline-flex items-center gap-2 hover:text-slate-200 transition-colors'
+            >
+              <Icon name='github' class='h-4 w-4' />
+              GitHub
+            </a>
+          </div>
+          <!-- <div class='flex items-center gap-4'>
             <a href='#' class='hover:text-slate-200'>Privacy</a>
             <a href='#' class='hover:text-slate-200'>Terms</a>
             <a href='#' class='hover:text-slate-200'>Contact</a>
-          </div>
+          </div> -->
         </div>
       </footer>
     </div>
