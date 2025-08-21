@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Main landing page -->
+  <url>
+    <loc>https://copycleanse.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://copycleanse.com/og-image.jpg</image:loc>
+      <image:title>CopyCleanse - Clean copy, auto-magically</image:title>
+      <image:caption>Free online text cleaner that removes hidden characters and AI tracking
+        parameters</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Direct link to the application -->
+  <url>
+    <loc>https://clean.copycleanse.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

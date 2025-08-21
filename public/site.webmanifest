@@ -1,0 +1,59 @@
+{
+  "name": "CopyCleanse - AI Text Cleaner",
+  "short_name": "CopyCleanse",
+  "description": "Make AI-generated text undetectable by removing telltale signs and artifacts",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#4338ca",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": [
+    "productivity",
+    "utilities",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Clean Text Now",
+      "short_name": "Clean Text",
+      "description": "Go directly to the text cleaning tool",
+      "url": "https://clean.copycleanse.com/",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "CopyCleanse landing page"
+    }
+  ]
+}

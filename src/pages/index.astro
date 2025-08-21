@@ -7,45 +7,228 @@ import '../styles/global.css'
   <head>
     <meta charset='utf-8' />
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
-    <meta name='viewport' content='width=device-width' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
     <meta name='generator' content={Astro.generator} />
-    <title>CopyCleanse - Clean copy, auto-magically</title>
+
+    <!-- Primary Meta Tags -->
+    <title>
+      CopyCleanse - Clean Text Automatically | Remove Hidden Characters & AI
+      Tracking
+    </title>
     <meta
       name='description'
-      content='Paste messy text. CopyCleanse scrubs hidden whitespace, zero‑widths, smart quotes, em dashes, ellipses, soft hyphens, odd Unicode, and AI tracking params — then auto‑copies the cleaned version.'
+      content='Make AI-generated text undetectable. Free tool removes telltale signs: hidden characters, smart quotes, em dashes, Unicode artifacts, and tracking parameters. Clean AI text instantly in your browser - no data stored.'
     />
+    <meta
+      name='keywords'
+      content='AI text cleaner, make AI text undetectable, bypass AI detection, remove AI artifacts, clean ChatGPT text, humanize AI content, zero width characters, smart quotes, AI detection avoidance, clean AI generated text'
+    />
+    <meta name='author' content='Ryan Roga' />
+    <meta
+      name='robots'
+      content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+    />
+    <link rel='canonical' href='https://copycleanse.com/' />
+
+    <!-- Preload critical resources -->
+    <link rel='preconnect' href='https://fonts.googleapis.com' crossorigin />
+    <link rel='dns-prefetch' href='https://clean.copycleanse.com' />
+
+    <!-- Additional SEO -->
+    <meta name='format-detection' content='telephone=no' />
+    <meta name='google' content='nositelinkssearchbox' />
+    <meta name='google' content='notranslate' />
+
+    <!-- Web App Manifest -->
+    <link rel='manifest' href='/site.webmanifest' />
+
+    <!-- Theme Color -->
+    <meta name='theme-color' content='#4338ca' />
+    <meta name='msapplication-TileColor' content='#4338ca' />
+
+    <!-- Open Graph / Facebook -->
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content='https://copycleanse.com/' />
+    <meta
+      property='og:title'
+      content='CopyCleanse - Clean Text Automatically | Remove Hidden Characters & AI Tracking'
+    />
+    <meta
+      property='og:description'
+      content='Make AI-generated text undetectable. Free tool removes telltale signs: hidden characters, smart quotes, em dashes, Unicode artifacts, and tracking parameters. Clean AI text instantly in your browser - no data stored.'
+    />
+    <meta property='og:image' content='https://copycleanse.com/og-image.jpg' />
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='630' />
+    <meta
+      property='og:image:alt'
+      content='CopyCleanse - Clean copy, auto-magically'
+    />
+    <meta property='og:site_name' content='CopyCleanse' />
+    <meta property='og:locale' content='en_US' />
+
+    <!-- Twitter -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:url' content='https://copycleanse.com/' />
+    <meta
+      name='twitter:title'
+      content='CopyCleanse - Clean Text Automatically | Remove Hidden Characters & AI Tracking'
+    />
+    <meta
+      name='twitter:description'
+      content='Make AI-generated text undetectable. Free tool removes telltale signs: hidden characters, smart quotes, em dashes, Unicode artifacts, and tracking parameters. Clean AI text instantly in your browser - no data stored.'
+    />
+    <meta name='twitter:image' content='https://copycleanse.com/og-image.jpg' />
+    <meta
+      name='twitter:image:alt'
+      content='CopyCleanse - Clean copy, auto-magically'
+    />
+    <meta name='twitter:creator' content='@RyanRoga' />
+
+    <!-- Additional Meta Tags -->
+    <meta name='application-name' content='CopyCleanse' />
+    <meta name='apple-mobile-web-app-title' content='CopyCleanse' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta
+      name='apple-mobile-web-app-status-bar-style'
+      content='black-translucent'
+    />
+
+    <!-- JSON-LD Structured Data -->
+    <script type='application/ld+json'>
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "@id": "https://copycleanse.com/#webapp",
+            "name": "CopyCleanse",
+            "alternateName": "Copy Cleanse",
+            "url": "https://copycleanse.com/",
+            "applicationCategory": "UtilityApplication",
+            "operatingSystem": "Web Browser",
+            "description": "Make AI-generated text undetectable by removing telltale signs like hidden characters, smart quotes, em dashes, Unicode artifacts, and AI tracking parameters. Clean AI text instantly in your browser.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "author": {
+              "@type": "Person",
+              "@id": "https://copycleanse.com/#author",
+              "name": "Ryan Roga",
+              "url": "https://github.com/rogadev"
+            },
+            "featureList": [
+              "Remove zero-width characters",
+              "Clean hidden whitespace",
+              "Normalize smart quotes to straight quotes",
+              "Convert em/en dashes",
+              "Remove Unicode ellipses",
+              "Strip soft hyphens",
+              "Clean directional marks",
+              "Remove non-breaking spaces",
+              "Filter suspicious homoglyphs",
+              "Remove URL UTM and AI tracking parameters"
+            ],
+            "browserRequirements": "Requires JavaScript",
+            "permissions": "clipboard-write"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://copycleanse.com/#organization",
+            "name": "CopyCleanse",
+            "url": "https://copycleanse.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://copycleanse.com/logo.png"
+            },
+            "sameAs": ["https://github.com/rogadev"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://copycleanse.com/#website",
+            "url": "https://copycleanse.com/",
+            "name": "CopyCleanse",
+            "description": "Clean text automatically - remove hidden characters and AI tracking",
+            "publisher": {
+              "@id": "https://copycleanse.com/#organization"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://clean.copycleanse.com/?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://copycleanse.com/#software",
+            "name": "CopyCleanse Text Cleaner",
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web Browser",
+            "description": "Browser-based text cleaning tool that removes hidden characters, normalizes formatting, and strips tracking parameters from text and URLs.",
+            "url": "https://clean.copycleanse.com/",
+            "downloadUrl": "https://clean.copycleanse.com/",
+            "softwareVersion": "1.0",
+            "datePublished": "2025-01-01",
+            "author": {
+              "@id": "https://copycleanse.com/#author"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://copycleanse.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can CopyCleanse make AI text undetectable?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "CopyCleanse removes many common artifacts that AI detection tools look for, including smart quotes, em dashes, Unicode characters, hidden whitespace, and tracking parameters. While no tool can guarantee 100% undetectability, removing these telltale signs significantly improves your text's human appearance."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does CopyCleanse store my text data?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, CopyCleanse processes all text locally in your browser. Your content never leaves your device, ensuring complete privacy. We don't store, transmit, or analyze any of your text."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What AI artifacts does CopyCleanse remove?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "CopyCleanse removes zero-width characters, hidden whitespace, smart quotes, em/en dashes, Unicode ellipses, soft hyphens, directional marks, non-breaking spaces, suspicious homoglyphs, and URL tracking parameters commonly found in AI-generated content."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is CopyCleanse free to use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, CopyCleanse is completely free to use. There are no subscriptions, limits, or hidden fees. Simply paste your text and get instant results."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div
       class='min-h-dvh bg-gradient-to-b from-slate-900 via-slate-950 to-black text-slate-100'
     >
-      <!-- Header -->
-      <header
-        class='sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60 bg-slate-900/80 border-b border-white/5'
-      >
-        <div
-          class='mx-auto max-w-6xl px-4 py-3 flex items-center justify-between'
-        >
-          <a href='#' class='flex items-center gap-2 group'>
-            <img
-              src='/logo.png'
-              alt='CopyCleanse Logo'
-              class='h-9 w-9 rounded-xl ring-1 ring-white/15 group-hover:scale-105 transition'
-            />
-            <span class='text-lg font-semibold tracking-tight'>CopyCleanse</span
-            >
-          </a>
-          <div class='hidden sm:block'>
-            <a
-              href='#try'
-              class='inline-flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/15 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400'
-            >
-              <Icon name='sparkles' class='h-4 w-4' /> Paste & Clean
-            </a>
-          </div>
-        </div>
-      </header>
-
       <!-- Hero -->
       <section class='relative'>
         <div class='mx-auto max-w-6xl px-4 py-10 sm:py-16'>
@@ -54,22 +237,22 @@ import '../styles/global.css'
               <div
                 class='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300'
               >
-                <Icon name='shield-check' class='h-3.5 w-3.5' /> Zero-noise, human-friendly
-                text
+                <Icon name='shield-check' class='h-3.5 w-3.5' /> Make AI text undetectable
               </div>
               <h1
                 class='mt-4 text-4xl font-semibold tracking-tight sm:text-5xl'
               >
-                Clean copy, <span
+                Clean AI text, <span
                   class='bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent'
                   >auto-magically</span
                 >
               </h1>
               <p class='mt-4 text-slate-300 max-w-prose'>
-                Paste messy text. CopyCleanse scrubs hidden whitespace,
-                zero‑widths, smart quotes, em dashes, ellipses, soft hyphens,
-                odd Unicode, and AI tracking params — then auto‑copies the
-                cleaned version.
+                Remove telltale signs that expose AI-generated content.
+                CopyCleanse strips hidden characters, normalizes smart quotes,
+                removes tracking parameters, and cleans Unicode artifacts that
+                make text look artificially generated — then auto‑copies the
+                humanized result.
               </p>
               <div class='mt-6 flex items-center gap-3'>
                 <a
@@ -209,9 +392,9 @@ import '../styles/global.css'
         <div class='mx-auto max-w-6xl px-4 py-10 sm:py-14'>
           <h2 class='text-2xl font-semibold'>How it works</h2>
           <p class='mt-2 text-slate-300 text-sm max-w-prose'>
-            CopyCleanse simply looks for and replaces the problematic items
-            right here in your browser. The text stays on your computer or
-            device and is never sent to a server.
+            CopyCleanse identifies and removes the subtle markers that expose
+            AI-generated content. All processing happens locally in your browser
+            — your text never leaves your device, ensuring complete privacy.
           </p>
         </div>
       </section>
@@ -219,10 +402,10 @@ import '../styles/global.css'
       <!-- What it removes -->
       <section id='what' class='border-t border-white/5'>
         <div class='mx-auto max-w-6xl px-4 py-10 sm:py-14'>
-          <h2 class='text-2xl font-semibold'>What gets removed / normalized</h2>
+          <h2 class='text-2xl font-semibold'>AI artifacts we remove</h2>
           <p class='mt-2 text-slate-300 text-sm max-w-prose'>
-            CopyCleanse targets noise that breaks formatting or signals
-            automated text.
+            These telltale signs often appear in AI-generated content and can
+            trigger detection systems or look unnatural to readers.
           </p>
           <div class='mt-4 flex flex-wrap gap-2'>
             <span
@@ -285,6 +468,111 @@ import '../styles/global.css'
               <Icon name='check-circle' class='h-3.5 w-3.5 text-emerald-300' /> URL
               UTM & AI params
             </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why AI Detection Matters -->
+      <section id='detection' class='border-t border-white/5 bg-slate-950/20'>
+        <div class='mx-auto max-w-6xl px-4 py-10 sm:py-14'>
+          <div class='grid gap-8 lg:grid-cols-2 lg:items-start'>
+            <div>
+              <h2 class='text-2xl font-semibold'>Why AI detection matters</h2>
+              <p class='mt-3 text-slate-300'>
+                AI detection tools are becoming increasingly sophisticated,
+                scanning for patterns that reveal machine-generated content.
+                Even when AI assists with legitimate work, these subtle
+                artifacts can trigger false positives.
+              </p>
+              <div class='mt-6 space-y-3'>
+                <div class='flex items-start gap-3'>
+                  <Icon
+                    name='shield-check'
+                    class='mt-0.5 h-5 w-5 text-emerald-400 flex-shrink-0'
+                  />
+                  <div>
+                    <h3 class='text-sm font-medium text-slate-200'>
+                      Academic integrity
+                    </h3>
+                    <p class='mt-1 text-xs text-slate-400'>
+                      Clean up AI-assisted research and writing
+                    </p>
+                  </div>
+                </div>
+                <div class='flex items-start gap-3'>
+                  <Icon
+                    name='shield-check'
+                    class='mt-0.5 h-5 w-5 text-emerald-400 flex-shrink-0'
+                  />
+                  <div>
+                    <h3 class='text-sm font-medium text-slate-200'>
+                      Professional content
+                    </h3>
+                    <p class='mt-1 text-xs text-slate-400'>
+                      Ensure your work looks naturally human-written
+                    </p>
+                  </div>
+                </div>
+                <div class='flex items-start gap-3'>
+                  <Icon
+                    name='shield-check'
+                    class='mt-0.5 h-5 w-5 text-emerald-400 flex-shrink-0'
+                  />
+                  <div>
+                    <h3 class='text-sm font-medium text-slate-200'>
+                      Privacy protection
+                    </h3>
+                    <p class='mt-1 text-xs text-slate-400'>
+                      Remove tracking parameters that reveal your tools
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='lg:pl-8'>
+              <div class='rounded-xl border border-white/10 bg-white/5 p-5'>
+                <h3 class='text-sm font-medium text-slate-200 mb-3'>
+                  Common AI telltales we detect:
+                </h3>
+                <div class='space-y-2 text-xs text-slate-300'>
+                  <div class='flex items-center justify-between py-1'>
+                    <span>Smart quotes ("curly" vs "straight")</span>
+                    <Icon
+                      name='check-circle'
+                      class='h-4 w-4 text-emerald-400'
+                    />
+                  </div>
+                  <div class='flex items-center justify-between py-1'>
+                    <span>Em dashes (—) vs hyphens (-)</span>
+                    <Icon
+                      name='check-circle'
+                      class='h-4 w-4 text-emerald-400'
+                    />
+                  </div>
+                  <div class='flex items-center justify-between py-1'>
+                    <span>Unicode ellipses (…) vs periods</span>
+                    <Icon
+                      name='check-circle'
+                      class='h-4 w-4 text-emerald-400'
+                    />
+                  </div>
+                  <div class='flex items-center justify-between py-1'>
+                    <span>Hidden zero-width characters</span>
+                    <Icon
+                      name='check-circle'
+                      class='h-4 w-4 text-emerald-400'
+                    />
+                  </div>
+                  <div class='flex items-center justify-between py-1'>
+                    <span>Tracking URLs (utm_source=chatgpt)</span>
+                    <Icon
+                      name='check-circle'
+                      class='h-4 w-4 text-emerald-400'
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
