@@ -1,5 +1,18 @@
 @import 'tailwindcss';
 
+/* Optimize font loading with font-display: swap fallback */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('Helvetica'), local('sans-serif');
+  font-display: swap;
+  font-weight: 100 900;
+}
+
+/* Set Inter as primary font with system fallback */
+html {
+  font-family: 'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;
+}
+
 /* AI artifact highlighting styles */
 .ai-smart-quote {
   @apply bg-yellow-500/20 text-yellow-300 px-0.5 rounded border border-yellow-500/30;
@@ -31,4 +44,33 @@
   content: '';
   display: block;
   margin-top: 0.5rem;
+}
+
+/* Optimize rendering performance */
+* {
+  box-sizing: border-box;
+}
+
+/* Reduce layout thrashing */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* GPU acceleration for animations */
+.hover\:bg-indigo-600:hover,
+.hover\:bg-white\/10:hover,
+.hover\:bg-slate-700\/80:hover,
+.hover\:text-slate-200:hover {
+  will-change: background-color, color;
+  transform: translateZ(0);
+}
+
+/* Optimize gradients for performance */
+.bg-gradient-to-b,
+.bg-gradient-to-r,
+.bg-gradient-to-br,
+.bg-gradient-to-tr {
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
